@@ -26,7 +26,7 @@ Because experimental data points are often discrete, this script applies a **cub
 
 The generated plot displays a clean curve highlighting your experimental points alongside the mathematically derived dynamic peak:
 
-![Enzyme pH Optimum Curve](ph_optima_curve.png)
+![Enzyme pH Optimum Curve](ph_optima_plot.png)
 
 * **Blue Circles:** Raw experimental O.D. values.
 * **Orange Line:** Spline-interpolated kinetic trend.
