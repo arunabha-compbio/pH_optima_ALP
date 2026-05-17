@@ -20,3 +20,56 @@ Because experimental data points are often discrete, this script applies a **cub
 * **Publication-Quality Plotting:** Uses `ggplot2` with customized breaks, clear color-coding, and automatic peak annotation.
 
 ---
+---
+
+## 📊 Visualized Output
+
+The generated plot displays a clean curve highlighting your experimental points alongside the mathematically derived dynamic peak:
+
+![Enzyme pH Optimum Curve](ph_optimum_curve.png)
+
+* **Blue Circles:** Raw experimental O.D. values.
+* **Orange Line:** Spline-interpolated kinetic trend.
+* **Orange Diamond:** Calculated dynamic maximum peak ($pH_{opt} \approx 9.6$).
+
+---
+
+## 🚀 How to Run the Analysis
+
+The core logic is stored entirely within the standalone script [`pH_optima.R`](./pH_optima.R). You can execute the analysis directly from your R environment or terminal.
+
+### 1. Run via RStudio / Console
+Open RStudio, ensure you have `ggplot2` installed, and run:
+```R
+source("pH_optima.R")
+```
+
+### Limitations:
+
+**Interpolation Artifacts**: Splines assume a highly localized mathematical smoothness. If experimental data points are sparse or noisy, the spline can overfit the noise or generate unnatural "wobbles" (Runge's phenomenon) that do not reflect true biological behavior.
+**Lack of Mechanistic Basis**: This approach is purely empirical and descriptive. Unlike mechanistic models (e.g., calculations based on the Michaelis-Menten framework at varying pH or the Michaelis-Davidsohn equation), this model does not calculate the specific $pK_a$ values of the catalytic amino acid residues.
+**Buffer Interference**: The model assumes the observed drop in activity is due entirely to pH. In real laboratory settings, shifting pH requires changing the buffer system (e.g., switching from Tris to Glycine-NaOH), which can introduce confounding ion effects on enzyme stability or substrate binding.
+
+### Future Improvements:
+
+**Mechanistic pH-Rate Modeling**: Transitioning from empirical splines to non-linear regression using the diprotic ionization model to extract exact active-site pka values.
+**Confidence Interval Bootstrapping**: Implementing bootstrapping techniques to calculate a statistical confidence interval around the predicted pH optima, rather than just outputting a single point estimate.
+**Multi-temperature Integration**: Expanding the dataset into a 3D response surface model to analyze the synergistic effects of temperature and pH on enzyme structural stability simultaneously
+
+## Project Structure
+ 
+```
+.
+├── pH_optima.R   # Main analysis script
+└── README.md     # Project documentation
+└── pH_optima_plot    #plot generated              
+```
+ 
+---
+ 
+## Author
+ 
+**Arunabha Pal**
+BSc Microbiology
+_St. Xavier's College (Autonomous) Kolkata_
+
