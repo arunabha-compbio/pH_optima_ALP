@@ -31,7 +31,7 @@ The generated plot displays a clean curve highlighting your experimental points 
 
 * **Blue Circles:** Raw experimental O.D. values.
 * **Orange Line:** Spline-interpolated kinetic trend.
-* **Orange Diamond:** Calculated dynamic maximum peak ($pH_{opt} \approx 9.6$).
+* **Orange Diamond:** Calculated dynamic maximum peak ($pH_{opt} \approx 9.7$).
 
 ---
 
