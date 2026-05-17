@@ -40,22 +40,37 @@ The generated plot displays a clean curve highlighting your experimental points 
 The core logic is stored entirely within the standalone script [`pH_optima.R`](./pH_optima.R). You can execute the analysis directly from your R environment or terminal.
 
 ### 1. Run via RStudio / Console
-Open RStudio, ensure you have `ggplot2` installed, and run:
-```R
+### 1. Install Required Package
+
+```r
+install.packages("ggplot2")
+```
+
+### 2. Run the Script
+
+```r
 source("pH_optima.R")
 ```
 
+### Output
+
+Running the script generates:
+
+- A pH optima curve
+- Identification of optimum pH
+- Publication-style visualization
+
 ### Limitations:
 
-**Interpolation Artifacts**: Splines assume a highly localized mathematical smoothness. If experimental data points are sparse or noisy, the spline can overfit the noise or generate unnatural "wobbles" (Runge's phenomenon) that do not reflect true biological behavior.
-**Lack of Mechanistic Basis**: This approach is purely empirical and descriptive. Unlike mechanistic models (e.g., calculations based on the Michaelis-Menten framework at varying pH or the Michaelis-Davidsohn equation), this model does not calculate the specific $pK_a$ values of the catalytic amino acid residues.
-**Buffer Interference**: The model assumes the observed drop in activity is due entirely to pH. In real laboratory settings, shifting pH requires changing the buffer system (e.g., switching from Tris to Glycine-NaOH), which can introduce confounding ion effects on enzyme stability or substrate binding.
+* **Interpolation Artifacts**: Splines assume a highly localized mathematical smoothness. If experimental data points are sparse or noisy, the spline can overfit the noise or generate unnatural "wobbles" (Runge's phenomenon) that do not reflect true biological behavior.
+* **Lack of Mechanistic Basis**: This approach is purely empirical and descriptive. Unlike mechanistic models (e.g., calculations based on the Michaelis-Menten framework at varying pH or the Michaelis-Davidsohn equation), this model does not calculate the specific $pK_a$ values of the catalytic amino acid residues.
+* **Buffer Interference**: The model assumes the observed drop in activity is due entirely to pH. In real laboratory settings, shifting pH requires changing the buffer system (e.g., switching from Tris to Glycine-NaOH), which can introduce confounding ion effects on enzyme stability or substrate binding.
 
 ### Future Improvements:
 
-**Mechanistic pH-Rate Modeling**: Transitioning from empirical splines to non-linear regression using the diprotic ionization model to extract exact active-site pka values.
-**Confidence Interval Bootstrapping**: Implementing bootstrapping techniques to calculate a statistical confidence interval around the predicted pH optima, rather than just outputting a single point estimate.
-**Multi-temperature Integration**: Expanding the dataset into a 3D response surface model to analyze the synergistic effects of temperature and pH on enzyme structural stability simultaneously
+* **Mechanistic pH-Rate Modeling**: Transitioning from empirical splines to non-linear regression using the diprotic ionization model to extract exact active-site pka values.
+* **Confidence Interval Bootstrapping**: Implementing bootstrapping techniques to calculate a statistical confidence interval around the predicted pH optima, rather than just outputting a single point estimate.
+* **Multi-temperature Integration**: Expanding the dataset into a 3D response surface model to analyze the synergistic effects of temperature and pH on enzyme structural stability simultaneously
 
 ## Project Structure
  
