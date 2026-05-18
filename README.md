@@ -14,7 +14,7 @@ Because experimental data points are often discrete, this script applies a **cub
 
 ---
 
-## 🚀 Script Features
+##  Script Features
 * **Cubic Spline Interpolation:** Smoothes discrete lab data points into a continuous kinetic curve ($n = 500$).
 * **Automated Peak Detection:** Automatically detects the precise coordinates of maximum enzyme activity.
 * **Publication-Quality Plotting:** Uses `ggplot2` with customized breaks, clear color-coding, and automatic peak annotation.
@@ -22,7 +22,7 @@ Because experimental data points are often discrete, this script applies a **cub
 ---
 ---
 
-## 📊 Visualized Output
+##  Visualized Output
 
 The generated plot displays a clean curve highlighting your experimental points alongside the mathematically derived dynamic peak:
 
@@ -35,7 +35,7 @@ The generated plot displays a clean curve highlighting your experimental points 
 
 ---
 
-## 🚀 How to Run the Analysis
+##  How to Run the Analysis
 
 The core logic is stored entirely within the standalone script [`pH_optima.R`](./pH_optima.R). You can execute the analysis directly from your R environment or terminal.
 
@@ -45,7 +45,7 @@ The core logic is stored entirely within the standalone script [`pH_optima.R`](.
 ```r
 install.packages("ggplot2")
 ```
-### 📊 Experimental Dataset
+###  Experimental Dataset
 
 | pH | Enzyme Activity (O.D.) |
 | :---: | :---: |
