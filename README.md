@@ -45,6 +45,14 @@ The core logic is stored entirely within the standalone script [`pH_optima.R`](.
 ```r
 install.packages("ggplot2")
 ```
+### 📊 Experimental Dataset
+
+| pH | Enzyme Activity (O.D.) |
+| :---: | :---: |
+| 8.6 | 0.038 |
+| 9.0 | 0.040 |
+| 9.4 | 0.054 |
+| 10.0 | 0.050 |
 
 ### 2. Run the Script
 
